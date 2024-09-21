@@ -1,5 +1,10 @@
 <template>
-  <v-table :data="users">
+  <div>
+  <label>Filter by Age:</label>
+  <input v-model="filters.name.value"/>
+
+  <v-table :data="users"
+          :filters="filters">
     <thead slot="head">
         <th>Name</th>
         <th>Age</th>
@@ -17,6 +22,7 @@
         </tr>
     </tbody>
   </v-table>
+  </div>
 </template>
 
 
@@ -26,7 +32,10 @@ import users from './users.json'
 export default {
   name: 'TableView',
   data: () => ({
-    users
+    users,
+    filters: {
+      name: { value: '', keys: ['Age'] }
+    }
   })
 }
 </script>
