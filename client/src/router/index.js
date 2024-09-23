@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import TableView from '../components/table.vue'
+import ProcessResults from '../components/process.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/test',
     name: 'test',
     component: TableView
+  },
+  {
+    path: '/process',
+    name: 'process',
+    component: ProcessResults
   },
   {
     path: '/about',
